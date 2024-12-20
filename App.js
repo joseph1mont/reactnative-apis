@@ -1,32 +1,87 @@
+import { StatusBar } from "expo-status-bar";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "./Screens/HomeScreen";
 import AnimatedScreen from "./Screens/AnimatedScreen";
 
+import CategoriesScreen from "./Screens/CategoriesScreen";
+import FavoritesScreen from "./Screens/CategoriesScreen";
+
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "#351401" },
+        headerTintColor: "white",
+        sceneContainerStyle: { backgroundColor: "#3f2f25" },
+        drawerContentStyle: { backgroundColor: "#351401" },
+        drawerInactiveTintColor: "white",
+        drawerActiveTintColor: "#351401",
+        drawerActiveBackgroundColor: "#e4baa1",
+      }}
+    >
+      <Drawer.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          title: "All Categories",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="list" color={color} size={size} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Animated"
+        component={AnimatedScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="star" color={color} size={size} />
+          ),
+        }}
+      />
+    </Drawer.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Animated" // Set the initial route here
-        screenOptions={{
-          headerStyle: { backgroundColor: "grey" }, // Apply header styling here
-          headerTintColor: "white", // Optional: Set header text color
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: "Home Page" }}
-        />
-        <Stack.Screen
-          name="Animated"
-          component={AnimatedScreen}
-          options={{ title: "About Animation" }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar style="light" />
+
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Drawer" // Set the initial route here
+          screenOptions={{
+            headerStyle: { backgroundColor: "#351401" },
+            headerTintColor: "white",
+            sceneContainerStyle: { backgroundColor: "#3f2f25" },
+            drawerContentStyle: { backgroundColor: "#351401" },
+            drawerInactiveTintColor: "white",
+            drawerActiveTintColor: "#351401",
+            drawerActiveBackgroundColor: "#e4baa1",
+          }}
+        >
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ title: "Home Page" }}
+          />
+          <Stack.Screen
+            name="Drawer"
+            component={DrawerNavigator}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
