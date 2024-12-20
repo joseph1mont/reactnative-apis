@@ -2,4 +2,4 @@
 
 ### Screenshot:
 
-![Animated Screen](assets/images/animated.jpg "Social Media UI")
+![Animated Screen](assets/images/Animated.jpg "Social Media UI")
