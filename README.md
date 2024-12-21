@@ -6,4 +6,4 @@
 
 ### rnelements library
 
-![React Native Elements](assets/images/animated-elemnent.jpg "React Native Elements")
+![React Native Elements](assets/images/animatedelemnents.jpg "React Native Elements")
