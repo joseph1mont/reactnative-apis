@@ -2,4 +2,8 @@
 
 ### Screenshot:
 
-![Animated Screen](assets/images/animatedcat.jpg "Social Media UI")
+![React Native Animated](assets/images/animated.jpg "React Native Animated")
+
+### rnelements library
+
+![React Native Elements](assets/images/animated-elemney.jpg "React Native Elements")

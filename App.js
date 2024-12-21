@@ -9,7 +9,6 @@ import HomeScreen from "./Screens/HomeScreen";
 import AnimatedScreen from "./Screens/AnimatedScreen";
 
 import CategoriesScreen from "./Screens/CategoriesScreen";
-import FavoritesScreen from "./Screens/CategoriesScreen";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();

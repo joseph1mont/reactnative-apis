@@ -2,7 +2,9 @@ import React, { useRef, useEffect } from "react";
 import { Animated, Text, View, StyleSheet, Button } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
-const App = () => {
+import RNElements from "../components/RNElements";
+
+const AnimatedScreen = () => {
   // Create animated values for button movement and fade in/out effect
   const buttonPosition = useRef(new Animated.Value(0)).current; // Initial position at the top
   const fadeAnim = useRef(new Animated.Value(0)).current; // Fade value for overlay text
@@ -47,6 +49,7 @@ const App = () => {
           ]}
         >
           <Text style={styles.overlayText}>Click Fade Out Text Button</Text>
+          <RNElements />
         </Animated.View>
 
         {/* Buttons */}
@@ -98,6 +101,23 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     marginVertical: 16,
   },
+
+  fonts: {
+    marginBottom: 8,
+  },
+  user: {
+    flexDirection: "row",
+    marginBottom: 6,
+  },
+  image: {
+    width: 30,
+    height: 30,
+    marginRight: 10,
+  },
+  name: {
+    fontSize: 16,
+    marginTop: 5,
+  },
 });
 
-export default App;
+export default AnimatedScreen;
