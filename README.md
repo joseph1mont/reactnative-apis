@@ -2,8 +2,8 @@
 
 ### Screenshot:
 
-![React Native Animated](assets/images/animated.jpg "React Native Animated")
+![React Native Animated](assets/images/animatedcat.jpg "React Native Animated")
 
 ### rnelements library
 
-![React Native Elements](assets/images/animated-elemney.jpg "React Native Elements")
+![React Native Elements](assets/images/animated-elemnent.jpg "React Native Elements")
